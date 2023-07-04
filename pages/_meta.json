@@ -6,7 +6,7 @@
   },
   "email-setup": "Set up email",
   "chat-setup": "Set up chat",
-  "customers-setup": "Set up customers",
+  "customers-api": "Managing customers with the API",
   "customer-cards": "Customer Cards",
   "custom-timeline-entries": "Custom Timeline Entries",
   "-- Reference": {

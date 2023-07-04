@@ -1,12 +1,21 @@
-import { Callout, Steps, Tab, Tabs } from 'nextra-theme-docs';
+import { Callout, Tab, Tabs } from 'nextra-theme-docs';
 import { ImageContainer } from '../components/imageContainer';
 
 # Setting up email
 
 Setting up email requires you to complete two steps:
 
-1. [Receiving emails](#receiving-emails)
-2. [Sending emails](#sending-emails)
+1. [Receiving emails in Plain](#receiving-emails)
+2. [Sending emails from Plain](#sending-emails)
+
+If you follow this guide, bear in mind that:
+
+- All emails sent to that email address will be received by Plain (not your email provider's inbox)
+- You can only configure one support email address per Plain workspace
+
+If you need to receive a copy of each email sent to the support email address (for instance, to keep a copy in your
+company's email inbox), there are ways to achieve this. Please get in touch with us by email
+at [help@plain.com](mailto:help@plain.com), and we will be happy to help.
 
 ## What you will need
 
@@ -15,81 +24,27 @@ Setting up email requires you to complete two steps:
 - Your Plain workspace's inbound email address (which ends with
   `@inbound.postmark.app`). We will provide this during the email setup process.
 - Admin access to your domain's DNS settings.
-- If you use Google for email, you will need admin access to the Google Workspace
-  Admin console. Otherwise, admin access to your company email provider.
+- Admin access to your company's email provider.
+  - If you use Google for email, you will need admin access to the Google Workspace Admin console.
 
 ## What makes a good support email address?
 
 The only requirement is that your support email address uses your company's domain. Email addresses using `@gmail.com`
 , `@yahoo.com`, `@icloud.com`, `@hotmail.com` or any other public email provider **are not supported**.
 
-We recommend you to choose an email address that is easy to remember and clear that it represents a company. Good
+We recommend you choose an email address that is easy to remember and clear that it represents a company. Good
 examples could be `help@`, `support@`, `contact@` or `hello@`. Generally, we'd advise against a personal one
-like `sonia@` or `peter@`. But they might also be fine, depending on your needs.
+like `sonia@` or `peter@` but they might also be fine, depending on your needs.
 
-If you follow this guide, bear in mind that:
+## Receiving emails in Plain
 
-- all emails sent to that email address will be received by Plain (not your email provider's inbox)
-- you can only configure one support email address per Plain workspace
+To receive emails, you need to set up email forwarding from your company's support email address (e.g. `help@yourcompany.com`)
+to your Plain workspace's inbound email address. Your workspace's inbound email address ends with `@inbound.postmark.app` and
+can be found in Plain's workspace settings under **Settings → Email**.
 
-If you need to receive a copy of each email sent to the support email address (for instance, to keep a copy in your
-company's email inbox), there are ways to achieve this. Please get in touch with us by email
-at [help@plain.com](mailto:help@plain.com), and we will be happy to help.
+If you use Google for your emails, follow our guide to [receive emails in Plain with Google](email-setup/google)
 
-## Receiving emails
-
-In order to receive emails, you need to set up email forwarding from
-your company's support email address (e.g. `help@yourcompany.com`) to your Plain workspace's inbound email address. Your workspace's email inbound address ends with `@inbound.postmark.app` and can be found in workspace settings under **Settings → Email**.
-
-<Callout type="info" emoji="️👉">
-This assumes you use Google Workspace (formerly called Google Apps) to manage your domain's emails.
-
-If your email provider is not Google, you can still set up email forwarding in different ways, such as with your domain registrar (e.g. [DNSimple](https://support.dnsimple.com/articles/email-forwarding/)) or your email provider (e.g. [Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/email/configure-email-forwarding)).
-
-</Callout>
-
-<Steps>
-### Go to your Gmail routing configuration
- 
-You can find this here: https://admin.google.com/u/0/ac/apps/gmail/defaultrouting
- 
-### Add a new rule
-
-Under "Default routing" click on "CONFIGURE" or "ADD ANOTHER RULE"
-
-<ImageContainer>![Add new rule](/images/email-setup/email-setup-0.png)</ImageContainer>
-
-### Set the recipient
-
-In the dropdown, select "Single recipient" and write your **support email address** under "Email address"
-
-<ImageContainer>
-  ![Add your support email address](/images/email-setup/email-setup-1.png)
-</ImageContainer>
-
-### Check the box "Change envelope recipient"
-
-### Replace the recipient
-
-Choose "Replace recipient" and paste the inbound email address (`@inbound.postmarkapp.com`)
-
-<ImageContainer>![Replace recipient](/images/email-setup/email-setup-2.png)</ImageContainer>
-
-### Set who the rule applies to
-
-Scroll further down, and choose "Perform this action on non-recognised and recognised addresses"
-
-<ImageContainer>![Apply to all addresses](/images/email-setup/email-setup-3.png)</ImageContainer>
-
-### Click on "Save"
-
-That's it 💅
-
-</Steps>
-
-Let's now set up email sending, so you can fully enable emails for your workspace.
-
-## Sending emails
+## Sending emails from Plain
 
 To be able to send emails from Plain using your support email
 address, you will need to add a couple of DNS records to your domain.
