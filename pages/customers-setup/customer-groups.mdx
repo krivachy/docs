@@ -16,10 +16,9 @@ This guide assumes you've already created some customer groups in **Settings** â
 
 ## Add a customer to groups
 
-A customer can be added to a customer group using the `addCustomerToCustomerGroup` mutation. Here are some examples of when you might want to add a customer to a group:
+A customer can be added to a customer group using the `addCustomerToCustomerGroup` mutation.
 
-- Immediately assign them their relevant groups when they're created in Plain, e.g. because their email address belongs to a particular company
-- If you're grouping your customers by pricing tier, you could change their groups when they upgrade their subscription
+Depending on what your customer groups are you may want to call this API at different times. For example if you are grouping them by their pricing tier you will want to do this every time their tier changes.
 
 This operation requires the following permissions:
 

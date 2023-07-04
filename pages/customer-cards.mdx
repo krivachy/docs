@@ -23,7 +23,7 @@ Customer Cards are:
    - The customer's email and, if set, `externalId`
    - The configured Customer Card `key`s
 
-3. Your back-end responds with the JSON for each card
+3. Your backend responds with the JSON for each card
 4. Cards are shown to the user in Plain.
 
 Based on your Customer Card settings, Plain will send a request to your API like the below example:
@@ -73,7 +73,7 @@ Caching of Customer Cards is controlled via two properties:
 1. A time to live value (in seconds) in the Customer Card's settings. This can be changed under **Settings** → **Customer Cards**. Any changes will only apply to newly loaded Customer Cards.
 2. An explicit time to live value (in seconds) in your API response with the key `timeToLiveSeconds`. This overrides the value from settings and allows your API to dynamically set the TTL using custom logic.
 
-Any card that is past its expiry time will usually be deleted within a few minutes.
+Any card that is past its expiry time will usually be deleted within a few minutes but no later than 48 hours after expiry.
 
 ## Example cards
 
